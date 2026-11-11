@@ -20,46 +20,46 @@ variable "allowed_security_groups" {
 }
 
 variable "engine_version" {
-  type        = string
-  default     = "16.1"
+  type    = string
+  default = "16.1"
 }
 
 variable "instance_class" {
-  type        = string
-  default     = "db.t4g.micro"
+  type    = string
+  default = "db.t4g.micro"
 }
 
 variable "allocated_storage" {
-  type        = number
-  default     = 20
+  type    = number
+  default = 20
 }
 
 variable "database_name" {
-  type        = string
-  default     = "appdb"
+  type    = string
+  default = "appdb"
 }
 
 variable "master_username" {
-  type        = string
-  default     = "postgres_admin"
+  type    = string
+  default = "postgres_admin"
 }
 
 variable "master_password" {
-  type        = string
-  sensitive   = true
+  type      = string
+  sensitive = true
 }
 
 variable "multi_az" {
-  type        = bool
-  default     = false
+  type    = bool
+  default = false
 }
 
 variable "skip_final_snapshot" {
-  type        = bool
-  default     = true
+  type    = bool
+  default = true
 }
 
 variable "tags" {
-  type        = map(string)
-  default     = {}
+  type    = map(string)
+  default = {}
 }
