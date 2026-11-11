@@ -2,16 +2,16 @@ name: "Terraform Lint & Validate"
 
 on:
   push:
-    branches: [ main ]
+    branches: ["main", "fix/*"]
   pull_request:
-    branches: [ main ]
+    branches: ["main"]
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
@@ -26,7 +26,7 @@ jobs:
           for dir in modules/*; do
             if [ -d "$dir" ]; then
               echo "Validating $dir..."
-              terraform -chdir="$dir" init -backend=false
+              terraform -chdir="$dir" init -backend=false -input=false
               terraform -chdir="$dir" validate
             fi
           done

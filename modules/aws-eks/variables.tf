@@ -21,21 +21,21 @@ variable "instance_types" {
 }
 
 variable "desired_size" {
-  type        = number
-  default     = 2
+  type    = number
+  default = 2
 }
 
 variable "min_size" {
-  type        = number
-  default     = 1
+  type    = number
+  default = 1
 }
 
 variable "max_size" {
-  type        = number
-  default     = 5
+  type    = number
+  default = 5
 }
 
 variable "tags" {
-  type        = map(string)
-  default     = {}
+  type    = map(string)
+  default = {}
 }
